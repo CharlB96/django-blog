@@ -3,21 +3,25 @@ from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
+
 class About(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    # feature_image = CloudinaryField('image', default='placeholder')
-    slug = models.SlugField(max_length=200, unique=True)
-    content = models.TextField()
+    """
+    Stores a single about me text
+    """
+    title = models.CharField(max_length=200)
+    profile_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
-    
+    content = models.TextField()
 
-    class Meta:
+    def __str__(self):
+        return self.title
 
-        def __str__(self):
-            return f"{self.title}"
 
 class CollaborateRequest(models.Model):
-    name = models.CharField(max_length=200)
+    """
+    Stores a single collaboration request message
+    """
+    name = models.CharField(max_length=200, unique=True)
     email = models.EmailField()
     message = models.TextField()
     read = models.BooleanField(default=False)

@@ -62,6 +62,12 @@ LOGOUT_REDIRECT_URL = '/'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+CLOUDINARY = {
+    'cloud_name': 'dfo3bfnp5',
+    'api_key': '364185141636861',
+    'api_secret': 'X0ZPWAzuIooiINJrJaEn7WD_8b8',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
